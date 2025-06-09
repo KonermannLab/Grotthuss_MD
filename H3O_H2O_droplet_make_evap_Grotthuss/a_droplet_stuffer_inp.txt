@@ -1,0 +1,12 @@
+### input file for droplet_stuffer.py. Run program with $ python ~/Python/droplet_stuffer.py
+droplet_dry.gro
+1.2
+a_H3Oplus_tip4p.gro
+1
+2
+a_H3Oplus_tip4p.gro
+
+
+
+
+

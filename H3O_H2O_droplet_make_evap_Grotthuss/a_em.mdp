@@ -1,0 +1,17 @@
+; em.mdp - used as input into grompp to generate em.tpr
+integrator	= steep		; Algorithm (steep = steepest descent minimization)
+emtol		= 1000.0  	; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep      = 0.01      ; Energy step size
+nsteps		= 50000	  	; Maximum number of (minimization) steps to perform
+nstxout		= 1000
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+cutoff-scheme   = verlet
+ns_type		    = grid		; Method to determine neighbor list (simple, grid)
+rlist           = 333.3
+coulombtype	    = Cut-off   ; Treatment of long range electrostatic interactions
+rcoulomb	    = 333.3	    ; Short-range electrostatic cut-off
+vdwtype  	    = cut-off
+rvdw		    = 333.3		; Short-range Van der Waals cut-off
+pbc		        = xyz 		; Periodic Boundary Conditions
+nstlist         = 1

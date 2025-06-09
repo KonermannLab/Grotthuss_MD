@@ -1,0 +1,64 @@
+; A version of this file can be found at
+;http://www.sklogwiki.org/SklogWiki/index.php/TIP4P/2005_model_of_water
+;verified the parameters listed here against original paper Abascal & Vega, JCP 123, 234505 (2005) - LK
+
+
+[moleculetype]
+; molname nrexcl
+SOL  2
+
+[atoms]
+; nr type resnr residu atom cgnr charge
+1     OWT4x 1     SOL   OW  1     0     
+2     HWT4x 1     SOL  HW1  1     0.5564
+3     HWT4x 1     SOL  HW2  1     0.5564
+4     MWT4x 1     SOL   MW  1    -1.1128
+
+#ifndef FLEXIBLE
+[ settles ]
+; OW    funct   doh        dhh
+1       1       0.09572    0.15139
+#else
+[ bonds ]
+; i j   funct   length  force.c.
+1   2   1   0.09572 502416.0 0.09572    502416.0 
+1   3   1   0.09572 502416.0 0.09572    502416.0 
+    
+[ angles ]
+; i j   k   funct   angle   force.c.
+2   1   3   1   104.52  628.02  104.52  628.02  
+#endif
+
+[exclusions]
+1       2       3       4
+2       1       3       4
+3       1       2       4
+4       1       2       3
+
+; The position of the dummy is computed as follows:
+;
+;		O
+;  	      
+;	    D
+;	  
+;	H		H
+;
+; const = distance (OD) / [ cos (angle(DOH)) 	* distance (OH) ]
+;	  0.01546 nm	/ [ cos (52.26 deg)	* 0.09572 nm	]
+
+; Dummy pos x4 = x1 + a*(x2-x1) + b*(x3-x1)
+
+
+[ virtual_sites3 ]
+; Vsite from			funct	a		b
+4       1       2       3       1       0.13193828      0.13193828
+
+;  LJ parameters are defined in ffnonbonded.itp and listed here for information only
+;type    atnum  mass        charge ptype   sigma          epsilon
+;OWT4x   8      15.999400   0.0    A       3.1589e-01     7.7490e-01 ; TIP4p/2005 O
+;HWT4x   1      1.008000    0.0    A       0.0            0.0        ; TIP4p/2005 H
+;MWT4x   0      0.000000    0.0    A       0.0            0.0        ; TIP4p/2005 vsite
+
+
+
+

@@ -1,0 +1,41 @@
+[moleculetype]
+; molname nrexcl
+H3O  2
+
+[atoms]
+; nr type resnr residu atom cgnr charge
+1     OWT4x 1     H3O   OW  1     0     
+2     HWT4x 1     H3O  HW1  1     0.416
+3     HWT4x 1     H3O  HW2  1     0.416
+4     HWT4x 1     H3O  HW3  1     0.416
+5     MWT4x 1     H3O   MW  1    -0.248
+
+[ bonds ]
+; i j   funct   length   force.c.
+1   2   1       0.09686  502416.0
+1   3   1       0.09686  502416.0
+1   4   1       0.09686  502416.0
+
+    
+[ angles ]
+; i j   k   funct   angle   force.c.
+2   1   3   1       113.0   628.0
+2   1   4   1       113.0   628.0
+3   1   4   1       113.0   628.0
+ 
+
+; The structure of the H3O+ is as follows:
+;
+;      O
+;  	      
+;	   D
+;    H
+;H            H
+;
+; The following calculates the dummy (MW) coordinates from the coordinates of the other four atoms
+
+
+[ virtual_sites4 ]
+; Vsite from			     funct   a               b            c
+5       1       2       3      4     2       1              1           0.015
+
