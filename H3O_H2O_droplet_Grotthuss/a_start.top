@@ -1,0 +1,18 @@
+;Topology for droplet simulation with H3O and TIP4P-2005 water
+
+#include "/usr/local/gromacs/share/gromacs/top/RGM-modified-charmm36-Aug2019.ff/forcefield.itp"
+
+#include "/usr/local/gromacs/share/gromacs/top/RGM-modified-charmm36-Aug2019.ff/ions.itp"
+
+#include "a_H3Oplus_tip4p.itp"
+
+#include "/usr/local/gromacs/share/gromacs/top/RGM-modified-charmm36-Aug2019.ff/tip4p-2005.itp"
+
+[ system ]
+; Name
+ESI droplet
+
+[ molecules ]
+; Compound    #mols
+H3O            3
+SOL            235

@@ -1,0 +1,32 @@
+constraints         =  H-bonds 
+integrator          =  md 
+dt                  =  0.002   ; 2fs 
+nsteps              =  2000  ;total = 4ps
+nstxout-compressed  =  1000 
+nstlist             =  50 
+ns_type             =  simple
+cutoff-scheme       =  verlet
+comm_mode           =  linear
+coulombtype         =  cut-off
+vdwtype             =  cut-off 
+rlist               =  333.3
+rcoulomb            =  333.3
+rvdw                =  333.3
+pbc                 =  xyz
+
+lincs-order              = 4
+lincs-iter               = 8
+lincs-warnangle          = 90
+
+;Generate velocites 
+gen_vel             =  no
+;gen_temp            =  300
+
+Tcoupl              = nose-hoover
+ref_t               = 300
+tau_t               = 1
+tc-grps             = system
+nsttcouple          = 1
+
+;Pressure coupling
+Pcoupl              = NO
