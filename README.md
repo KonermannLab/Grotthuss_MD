@@ -1,11 +1,13 @@
-# Grotthuss_MD
 
 These files are for simulating Grotthuss diffusion of protons in water, as described in
 
-############################################################################################################
-# "Grotthuss Molecular Dynamics Simulations for Modeling Proton Hopping in Electrosprayed Water Droplets"  #
-# L. Konermann and S. Kim, J. Chem. Theory Comput. 18, 3781–3794 (2022)                                    #
-############################################################################################################
+"Grotthuss Molecular Dynamics Simulations for Modeling Proton Hopping in Electrosprayed Water Droplets"
+L. Konermann and S. Kim, J. Chem. Theory Comput. 18, 3781–3794 (2022)
+
+https://pubs.acs.org/doi/10.1021/acs.jctc.2c00001
+
+PLEASE CITE THIS PAPER WHEN USING ANY OF THE FILES IN THIS REPOSITORY. THANK YOU.
+
 
 Simulations are performed by alternating between brief Gromacs run segments (using static protons), and a 
 Python program (which performs proton hopping).
